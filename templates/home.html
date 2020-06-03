@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<link rel="stylesheet" type="text/css" href="http://www.mysite.ru/main.css">
+
+<head>
+
+    <meta charset="UTF-8">
+    <title>Home page</title>
+</head>
+<body>
+<! --
+проверка message, вернем, если запрос нам ошибку, ошибки пропишем вpp
+-->
+{% if message %}
+    <p>{{ message }}</p>
+{% endif %}
+<form action="" method="POST" >
+    <p>
+        <label for="searchINN">Введите ИНН  организации</label>
+        <label>
+            <input type="text" name="searchINN">
+        </label>
+    </p>
+    <p>
+	    <input type="submit" name="">
+	</p>
+</form>
+{% if information %}
+    <h2>{{ information.companyName }}</h2>
+    <h3>ОГРН</h3>
+    <p>{{ information.ogrn }}</p>
+    <h3>ИНН/КПП</h3>
+    <p>{{ information.inn }}/{{ information.kpp }}</p>
+    <h3>Дата регистрации</h3>
+    <p>{{ information.date }}</p>
+    <h3>Уставный капитал</h3>
+    <p>{{ information.money }}</p>
+    <h3>Юридический адрес</h3>
+    <p>{{ information.address }}</p>
+    <h3>Основной вид деятельности</h3>
+    <p>{{ information.typeOfActivity }}</p>
+{% endif %}
+</body>
+</html>
